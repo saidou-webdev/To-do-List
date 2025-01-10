@@ -11,16 +11,65 @@
         <h1>My To-Do List</h1>
     </header>
     <main>
+        <!-- Formulaire d'ajout de tâche -->
         <form id="task-form">
-            <label for="task-input">Nouvelle Tâche :</label>
-            <input type="text" id="task-input" placeholder="Ajoutez une tâche">
+            <div class="form-group">
+                <label for="task-input">Nouvelle Tâche :</label>
+                <input type="text" id="task-input" placeholder="Ajoutez une tâche" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date-input">Date limite :</label>
+                <input type="date" id="date-input">
+            </div>
+
+            <div class="form-group">
+                <label for="priority-select">Priorité :</label>
+                <select id="priority-select">
+                    <option value="Basse">Basse</option>
+                    <option value="Moyenne">Moyenne</option>
+                    <option value="Haute">Haute</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="category-select">Catégorie :</label>
+                <select id="category-select">
+                    <option value="Travail">Travail</option>
+                    <option value="Maison">Maison</option>
+                    <option value="Courses">Courses</option>
+                    <option value="Autre">Autre</option>
+                </select>
+            </div>
+
             <button type="submit">Ajouter</button>
         </form>
+
+        <!-- Section des filtres et recherche -->
+        <section id="filters-section">
+            <div id="filters">
+                <button data-filter="all" class="filter-btn active">Toutes</button>
+                <button data-filter="completed" class="filter-btn">Terminées</button>
+                <button data-filter="uncompleted" class="filter-btn">Non terminées</button>
+            </div>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Rechercher une tâche...">
+            </div>
+
+            <div id="sort-container">
+                <label for="sort-priority">Trier par :</label>
+                <button id="sort-priority">Priorité</button>
+                <button id="sort-date">Date</button>
+            </div>
+        </section>
+
+        <!-- Liste des tâches -->
         <section>
             <h2>Liste des tâches</h2>
-            <ul id="task-list"> </ul>
+            <ul id="task-list"></ul>
         </section>
     </main>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
